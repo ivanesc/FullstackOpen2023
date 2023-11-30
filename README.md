@@ -3,14 +3,14 @@
 Soluciones implementadas para cada uno de los ejercicios del bootcamp fullstack open 2023
 
 - [**Temas**](#temas)
-    - [**Part 0: Fundamentos de las aplicaciones web**](#part-0-fundamentos-de-las-aplicaciones-web)
+    - [**Parte 0: Fundamentos de las aplicaciones web**](#parte-0-fundamentos-de-las-aplicaciones-web)
       - [0.4: Nueva nota](#04-nueva-nota)
       - [0.5: Aplicación de una sola página](#05-aplicación-de-una-sola-página)
       - [0.6: Nueva nota spa](#06-nueva-nota-spa)
 
   ## **Temas**
 
-### **Part 0: Fundamentos de las aplicaciones web**
+### **Parte 0: Fundamentos de las aplicaciones web**
 
 #### 0.4: Nueva nota
 
