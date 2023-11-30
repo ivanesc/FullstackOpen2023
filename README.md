@@ -73,3 +73,25 @@ sequenceDiagram
   note right of browser: browser executes the event handler that renders notes to display creating the list of notes and deleting the previous list if there was one
 ```
 ![respuesta 0.5](./parte0/0.5-SPA-getNotes-diagram.png)
+
+#### 0.6: Nueva nota spa
+
+Cree un diagrama que represente la situación en la que el usuario crea una nueva nota utilizando la versión de una sola página de la aplicación.
+
+- usuario rellena el input y se enviá la información mediante un botón llamado "save" conectado a un controlador del formulario en el script spa.js.
+- el navegador renderiza de nuevo la lista de notas sin recargarse, una vez la última nota del paso anterior con su dato correspondiente del formulario haya sido añadida
+  a la lista de notas guardada en memoria que nos devolvió el servidor en una petición anterior. Esta es una de las ventajas que tienen las SPA.
+- el navegador envía una solicitud post con el dato introducido en el campo correspondiente del formulario a la dirección "exampleapp/new_note_spa".
+- el servidor guarda la información recibida, algo que será importante si se actualiza la página de spa para volver a recuperar toda la información desde el servidor.
+- el servidor retorna el código de respuesta 201 para saber que se ha creado correctamente dicha nota.
+
+```json
+sequenceDiagram
+  participant browser
+  participant server
+  note right of browser: spa.js adds a new note in the notes array when the user saves the form and then empties the form field and re-renders the updated list of notes with the last one added
+
+  browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+  server-->browser: status code 201 created
+```
+![respuesta 0.6](./parte0/0.6-SPA-addNote-diagram.png)
