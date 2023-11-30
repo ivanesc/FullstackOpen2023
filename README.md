@@ -44,4 +44,4 @@ sequenceDiagram
   Note right of browser: browser executes the event handler that renders notes to display taking into account that the new note added on the server can now be added to the rendered list
 ```
 
-![respuesta 0.4](./part-0/new-note.png)
+![respuesta 0.4](./parte0/0.4-New-note-diagram.png)
