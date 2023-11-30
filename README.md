@@ -27,9 +27,9 @@ sequenceDiagram
   participant server
   Note right of browser: client adds new note "Example text" in the form text field and submit
   browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
-  Note right of server: The server saves a new note in the db.json file adding the content of the note that comes from the browser's post request and responds with a redirection request to the browser to request   the content of the notes page again
+  Note left of server: The server saves a new note in the db.json file adding the content of the note that comes from the browser's post request and responds with a redirection request to the browser to request   the content of the notes page again
 
-  Note over browser: the POST method reloads browser, generating a new get call to server for to get all the notes again
+  Note right of browser: the POST method reloads browser, generating a new get call to server for to get all the notes again
   browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
   server-->browser: HTML-code
   browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
@@ -37,32 +37,11 @@ sequenceDiagram
   browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
   server-->browser: main.js
 
-  Note over browser: browser starts executing js-code that requests JSON data from server
+  Note right of browser: browser starts executing js-code that requests JSON data from server
   browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
   server-->browser: [{ ..., content: "Example text", date: "30-11-23" }]
 
-  Note over browser: browser executes the event handler that renders notes to display taking into account that the new note added on the server can now be added to the rendered list
+  Note right of browser: browser executes the event handler that renders notes to display taking into account that the new note added on the server can now be added to the rendered list
 ```
-
-sequenceDiagram
-  participant browser
-  participant server
-  Note right of browser: client adds new note "Example text" in the form text field and submit
-  browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
-  Note right of server: The server saves a new note in the db.json file adding the content of the note that comes from the browser's post request and responds with a redirection request to the browser to request   the content of the notes page again
-
-  Note over browser: the POST method reloads browser, generating a new get call to server for to get all the notes again
-  browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
-  server-->browser: HTML-code
-  browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
-  server-->browser: main.css
-  browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
-  server-->browser: main.js
-
-  Note over browser: browser starts executing js-code that requests JSON data from server
-  browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-  server-->browser: [{ ..., content: "Example text", date: "30-11-23" }]
-
-  Note over browser: browser executes the event handler that renders notes to display taking into account that the new note added on the server can now be added to the rendered list
 
 ![respuesta 0.4](./part-0/new-note.png)
